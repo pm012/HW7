@@ -52,6 +52,7 @@ EXTENSIONS = {
     "archives": ['.ZIP', '.TAR', '.GZ'],    
 }
 
+root_path=None
 # to get handled files by category
 files_by_category = {category: [] for category in EXTENSIONS.keys()}
 
@@ -135,13 +136,13 @@ def handle_folder(folder_path:str):
 
     return known_extensions, unknown_extensions, files_by_category
 
-if __name__ == "__main__":
-    
+def start():
+    global root_path
     try:
         root_path = sys.argv[1]
     except Exception:
-         print("Please eneter a directory to sort aa commandline parameter")
-         exit()
+           print("Please eneter a directory to sort aa commandline parameter")
+           exit()
 #    root_path = "/home/devel/Videos"
     result = handle_folder(root_path)
     print("Known Extensions:", result[0])
@@ -150,4 +151,9 @@ if __name__ == "__main__":
 
     for category, files in result[2].items():
         print(f"{category}: {files}")
+
+
+if __name__ == "__main__":
+    start()
+    
     

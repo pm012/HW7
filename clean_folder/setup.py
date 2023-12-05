@@ -9,6 +9,6 @@ if __name__ =='__main__':
                      author_email = 'john.doe@gmail.com',
                      license='MIT',
                      packages=setuptools.find_namespace_packages(),
-                     entry_points={'console_scripts': ['clean-folder=clean_folder.clean_folder.clean:start']}
+                     entry_points={'console_scripts': ['clean-folder=clean_folder.clean:start']}
     )
 
